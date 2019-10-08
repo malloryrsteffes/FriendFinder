@@ -168,26 +168,34 @@
       // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
       // depending on if a tables is available or not.
   
-    //   $.post("/api/tables", newReservation,
-    //     function(data) {
+      $.post("/api/friends", newFriend,
+        function(data) {
   
-    //       // If a table is available... tell user they are booked.
-    //       if (data) {
-    //         alert("Yay! You are officially booked!");
-    //       }
+            console.log(data);
+          // If a table is available... tell user they are booked.
+          if (data) {
+            alert("Thanks so much for answering our questions!");
+          }
   
-    //       // If a table is available... tell user they on the waiting list.
-    //       else {
-    //         alert("Sorry you are on the wait list");
-    //       }
+          // If a table is available... tell user they on the waiting list.
+          else {
+            alert("Oops. Something went wrong. Please try again.");
+          }
   
-    //       // Clear the form when submitting
-    //       $("#reserve-name").val("");
-    //       $("#reserve-phone").val("");
-    //       $("#reserve-email").val("");
-    //       $("#reserve-unique-id").val("");
-  
-    //     });
+          // Clear the form when submitting
+          $("#name").val("");
+          $("#photo").val("");
+          $("#q1").val("");
+          $("#q2").val("");
+          $("#q3").val("");
+          $("#q4").val("");
+          $("#q5").val("");
+          $("#q6").val("");
+          $("#q7").val("");
+          $("#q8").val("");
+          $("#q9").val("");
+          $("#q10").val("");
+        });
   
     });
   
