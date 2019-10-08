@@ -9,7 +9,7 @@ module.exports = function(app){
     // These are our HTML get requests
 
     //Home
-    app.get("/home", function(req, res){
+    app.get("/", function(req, res){
         res.sendFile(path.join(__dirname, "../public/home.html"));
     })
 
@@ -19,4 +19,4 @@ module.exports = function(app){
     })
 
 
-}
+};
