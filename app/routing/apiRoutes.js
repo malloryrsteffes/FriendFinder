@@ -8,7 +8,7 @@ module.exports = function(app){
 
     // GET
     app.get("/api/friends", function(res, req){
-        res.json(friendArray);
+        req.json(friendArray);
     })
 
 
