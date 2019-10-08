@@ -22,14 +22,17 @@
         <h3>Tell us about yourself!</h3>
         <h4>Your name (required)</h4>
         <input type="text" id="name" class="form-control" required>
-        <h4>Link to an image of you</h4>
+        <h4>Link to an image of you (required)</h4>
         <input type="text" id="photo" class="form-control" required>
         <hr>
-<!-- FRIEND QUIZ -->
+        <!-- FRIEND QUIZ -->
+        <h4> Answer the questions below on a scale of 1 to 5, where 1 is the least like you, and 5 is the most like you.
+        </h4>
         <form>
             <div class="form-group">
                 <label for="q1">Question 1</label>
                 <select class="form-control" id="q1">
+                    <option>Select</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -40,6 +43,7 @@
             <div class="form-group">
                 <label for="q2">Question 2</label>
                 <select class="form-control" id="q2">
+                    <option>Select</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -50,6 +54,7 @@
             <div class="form-group">
                 <label for="q3">Question 3</label>
                 <select class="form-control" id="q3">
+                    <option>Select</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -60,6 +65,7 @@
             <div class="form-group">
                 <label for="q4">Question 4</label>
                 <select class="form-control" id="q4">
+                    <option>Select</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -70,62 +76,68 @@
             <div class="form-group">
                 <label for="q5">Question 5</label>
                 <select class="form-control" id="q5">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                    <option>Select</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="q6">Question 6</label>
                 <select class="form-control" id="q6">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                    <option>Select</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="q7">Question 7</label>
                 <select class="form-control" id="q7">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                    <option>Select</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="q8">Question 8</label>
                 <select class="form-control" id="q8">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                    <option>Select</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="q9">Question 9</label>
                 <select class="form-control" id="q9">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                    <option>Select</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="q10">Question 10</label>
                 <select class="form-control" id="q10">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                    <option>Select</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
             </div>
         </form>
         <br>
@@ -133,14 +145,14 @@
             <i class="fa fa-check-circle" aria-hidden="true"></i>
             Submit
         </button>
+    </div>
+    <hr>
+    <footer class="footer">
+        <div class="container">
+            <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/malloryrsteffes/Friendfinder"
+                    target="_blank">GitHub Repo</a></p>
         </div>
-        <hr>
-        <footer class="footer">
-                <div class="container">
-                    <p><a href="/api/friends">API Friends List</a> | <a
-                            href="https://github.com/malloryrsteffes/Friendfinder" target="_blank">GitHub Repo</a></p>
-                </div>
-            </footer>
+    </footer>
 </body>
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
@@ -149,55 +161,56 @@
     // When the user hits submit, jQuery grabs all of the fields then sends a post request to our api
     // Our api recognizes the route (/api/friends)... and then runs the associated code (found in api-routes.js).
     // In this case the associated code "saves" the data to the friends.js file 
-  
-    $("#submitBtn").on("click", function(event) {
-      event.preventDefault();
-  
-      // Here we grab the form elements
-      var newFriend = {
-        name: $("#name").val().trim(),
-        photo: $("#photo").val().trim(),
-        scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(),
-        $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()],
-      };
-  
-      console.log(newFriend);
-  
-      // This line is the magic. It"s very similar to the standard ajax function we used.
-      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-      // depending on if a tables is available or not.
-  
-      $.post("/api/friends", newFriend,
-        function(data) {
-  
-            console.log(data);
-          // If a table is available... tell user they are booked.
-          if (data) {
-            alert("Thanks so much for answering our questions!");
-          }
-  
-          // If a table is available... tell user they on the waiting list.
-          else {
-            alert("Oops. Something went wrong. Please try again.");
-          }
-  
-          // Clear the form when submitting
-          $("#name").val("");
-          $("#photo").val("");
-          $("#q1").val("");
-          $("#q2").val("");
-          $("#q3").val("");
-          $("#q4").val("");
-          $("#q5").val("");
-          $("#q6").val("");
-          $("#q7").val("");
-          $("#q8").val("");
-          $("#q9").val("");
-          $("#q10").val("");
-        });
-  
+
+    $("#submitBtn").on("click", function (event) {
+        event.preventDefault();
+
+        // Here we grab the form elements
+        var newFriend = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(),
+            $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()],
+        };
+
+        console.log(newFriend);
+
+        // This line is the magic. It"s very similar to the standard ajax function we used.
+        // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+        // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+        // depending on if a tables is available or not.
+
+        $.post("/api/friends", newFriend,
+            function (data) {
+
+                console.log(data);
+                // If a table is available... tell user they are booked.
+                if (data) {
+                    alert("Thanks so much for answering our questions!");
+                }
+
+                // If a table is available... tell user they on the waiting list.
+                else {
+                    alert("Oops. Something went wrong. Please try again.");
+                }
+
+                // Clear the form when submitting
+                $("#name").val("");
+                $("#photo").val("");
+                $("#q1").val("");
+                $("#q2").val("");
+                $("#q3").val("");
+                $("#q4").val("");
+                $("#q5").val("");
+                $("#q6").val("");
+                $("#q7").val("");
+                $("#q8").val("");
+                $("#q9").val("");
+                $("#q10").val("");
+            });
+
     });
-  
-  </script>
+
+</script>
+
 </html>

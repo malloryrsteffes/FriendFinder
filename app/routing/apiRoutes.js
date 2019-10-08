@@ -3,7 +3,6 @@ var friendArray = require("../data/friends");
 
 // ROUTING ============================================
 
-
 module.exports = function(app){
 
     // GET
