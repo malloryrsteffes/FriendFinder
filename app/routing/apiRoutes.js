@@ -30,36 +30,35 @@ module.exports = function(app){
         //     return Math.abs(a - b);
         //   }
 
-       // Starting value to compare to. Needs to start at a high number! 
+        // This is how we will select which friend in the array will be our best
+       var bestFriendIndex = 0;
+       // Starting closest difference value to compare to. Needs to start at a high number in case someone is really weird!
        var closestDifference = 1000; 
-       var newBestFriendName;
-       var newBestFriendPhoto;
+      
 
         // Loop through the friends array
         for (i = 0; i < friendArray.length; i++){
-            // Set a starting difference of zero
-            var difference = 0;
+            // Set a starting difference of zero for each friend 
+            var totalDifference = 0;
             // Loop through the scores from the user
             for (j = 0; j < newFriend.scores.length; j++){
                 // use the math.abs function to find the difference between the user scores 
                 //and the scores from each friend the friendsArray
-                difference += Math.abs(friendArray[i].scores[j] - newFriend.scores[j]);
-
+                var difference = Math.abs(friendArray[i].scores[j] - newFriend.scores[j]);
+                totalDifference += difference;
             }
-
-            if (difference < closestDifference){
-
-                // We have a new closest difference!
-                closestDifference = difference;
-                newBestFriendName = friendArray[i].name;
-                newBestFriendPhoto = friendArray[i].photo;
-                console.log(newBestFriendName, newBestFriendPhoto);
-
+            // if the friend's distance is closer than our starting difference
+            if (totalDifference < closestDifference){
+                // set our best friend index to that friend's location in the friendArray. We'll use this in our  res.json later.
+                bestFriendIndex = i;
+                // set our new closest difference to that friend's difference
+                closestDifference = totalDifference;
             }
-            // IT WORKS KINDA
-            console.log(friendArray[i].name + ' difference = ' + difference);
-
         }
+        // MOST IMPORTANTLY - we send the friend located at our bestFriendIndex in the friend array to the modal
+        res.json(friendArray[bestFriendIndex]);
+        // Then we push our new friend outo the friend Array.
         friendArray.push(newFriend);
+        
     })
 }
