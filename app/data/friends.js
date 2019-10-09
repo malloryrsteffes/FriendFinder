@@ -1,7 +1,7 @@
 // We start with an empty array of friends
 var friendArray = [
     {
-        "name": "Mal",
+        "name": "Mal S",
         "photo": "google.com",
         "scores": [
         1,
@@ -17,7 +17,7 @@ var friendArray = [
         ]
         },
     {
-        "name": "Bob",
+        "name": "Bob Ross",
         "photo": "bobross.com",
         "scores": [
         3,
@@ -30,6 +30,22 @@ var friendArray = [
         2,
         2,
         3
+        ]
+        },
+    {
+        "name": "Zeke Elliott",
+        "photo": "bobross.com",
+        "scores": [
+        5,
+        1,
+        5,
+        2,
+        5,
+        2,
+        1,
+        5,
+        3,
+        4
         ]
         }
 ];

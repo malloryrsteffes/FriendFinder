@@ -16,6 +16,7 @@ module.exports = function(app){
 
         // grab our newFriend data
         var newFriend = req.body;
+
         // turning the string of scores into numbers
         for(var i = 0; i < newFriend.scores.length; i++) {
             newFriend.scores[i] = parseInt(newFriend.scores[i]);
@@ -29,6 +30,11 @@ module.exports = function(app){
         //     return Math.abs(a - b);
         //   }
 
+       // Starting value to compare to. Needs to start at a high number! 
+       var closestDifference = 1000; 
+       var newBestFriendName;
+       var newBestFriendPhoto;
+
         // Loop through the friends array
         for (i = 0; i < friendArray.length; i++){
             // Set a starting difference of zero
@@ -38,6 +44,16 @@ module.exports = function(app){
                 // use the math.abs function to find the difference between the user scores 
                 //and the scores from each friend the friendsArray
                 difference += Math.abs(friendArray[i].scores[j] - newFriend.scores[j]);
+
+            }
+
+            if (difference < closestDifference){
+
+                // We have a new closest difference!
+                closestDifference = difference;
+                newBestFriendName = friendArray[i].name;
+                newBestFriendPhoto = friendArray[i].photo;
+                console.log(newBestFriendName, newBestFriendPhoto);
 
             }
             // IT WORKS KINDA
