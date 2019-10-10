@@ -2,7 +2,7 @@
 var friendArray = [
     {
         "name": "Mal S",
-        "photo": "https://imgur.com/a/RrWln9z",
+        "photo": "https://user-images.githubusercontent.com/52713263/66530107-5d40b980-ead4-11e9-80a1-2f3a91ed02a8.png",
         "scores": [
         1,
         5,
